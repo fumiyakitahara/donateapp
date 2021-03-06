@@ -1,0 +1,17 @@
+<%= link_to support_path(support) do %>   
+  <div class="support">
+    <div class="upper-support">
+      <div class="support-user">
+        <%= support.user.last_name + support.user.first_name %>
+      </div>
+      <div class="support-date">
+        <%= support.created_at %>
+      </div>
+    </div>
+    <div class="lower-supports">
+      <div class="support-content">
+        <%= support.item %>
+      </div>
+    </div>
+  </div>
+<% end %>

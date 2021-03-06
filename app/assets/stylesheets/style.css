@@ -1,0 +1,14 @@
+header{
+  height: 60px;
+  display: flex;
+  background-color: rgb(161, 183, 211);
+}
+
+.header-left{
+  float: left;  
+  width: 13%;
+}
+.header-right{
+  float: right;
+  width: 87%;
+}
