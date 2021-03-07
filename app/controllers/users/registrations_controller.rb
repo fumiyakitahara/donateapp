@@ -16,8 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
      end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    binding.pry
     @address = @user.build_address
     render :new_address
+    binding.pry
   end
 
   def create_address
@@ -30,7 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
-    redirect_to "supports/index"
+    redirect_to root_path
   end
  
   private

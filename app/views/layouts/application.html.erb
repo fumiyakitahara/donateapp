@@ -5,33 +5,36 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+   <link href="https://fonts.googleapis.com/css?family=Caveat rel= "stylesheet">
+
     <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application'  %>
   </head>
 
   <body>
-  <header>
-    <div class="header-left">
-     <div class="title">
-      <%= link_to root_path do%>
-        <h2>ナマチワ</h2>
-      <% end %>
-      </div>
-    </div>
-    <div class="header-right">
-      <div class="upside">
-        <%=link_to "活動内容", "#"%>
-        <%=link_to "慈善団体に寄付","#"%>
-      </div>
-      <div class="downside">
-        <%=link_to "支援の申し込み", new_support_path%>
-        <%=link_to "アカウントの作成",new_user_registration_path%>
-        <%=link_to "ログイン",new_user_session_path%>
-      </div>
-    </div>
-  </header>
-
+    <header>
+      <nav class="gnav" class="fixed">
+        <div class = "site-name">
+          <%= link_to root_path do%>
+            <p class = "name">Donate App</p>
+          <% end %>
+        </div>
+        <div class = "header-right">
+          <ul class="gnav-list">
+            <li class="gnav-item"> <%=link_to "活動内容", "#" ,class: "gnav-link"%> </li>
+            <li class="gnav-item"> <%=link_to "慈善団体に寄付","#",class: "gnav-link"%></li>
+            <li class="gnav-item"> <%=link_to "支援の申し込み", new_support_path,class: "gnav-link"%></li>
+            <% if user_signed_in?%>
+              <li class="gnav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li class="gnav-item"><%=link_to "アカウントの作成",new_user_registration_path, class: "gnav-link"%></li>
+              <li class="gnav-item"> <%=link_to "ログイン",new_user_session_path, class: "gnav-link"%></li>
+            <%end%>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

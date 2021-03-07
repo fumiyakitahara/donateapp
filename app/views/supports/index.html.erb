@@ -1,12 +1,54 @@
-<% if user_signed_in?%>
-  <h2>ログインしています</h2>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-  <h2>ログインしていません</h2>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<div class="content">
+  <div class="picture">
+    <%= image_tag "phonto.jpg", class:"pic" %>
+  </div>
+  <div class="a">
+     
+  </div>
+  <div class="attention">
+  ※ 枠線内をクリックすることで詳細ページに移動します<br/>
+  ※ 詳細ページにて寄付ができます
+  </div>
+  
+  <div class="supports">
+    <ul class='support-lists'>
+      <% @supports.each do |support| %>
+        <li class='list'>
+          <%= link_to support_path(support) do %>   
+            <div class="support">
+              <div class = "support-pic">
+                <% if support.image.present? %>
+                  <%= image_tag support.image, class:"pictures" %>
+                <% else %>
+                  <%= image_tag "46477.jpg", class:"pictures" %>
+                <% end %>
+              </div>
+              <div class="support-user">
+                <div class = "title">お名前</div>
+                <div class="support-content"><%= support.user.last_name + support.user.first_name %> さん</div>
+              </div>
+              <div class="support-date">
+                <div class = "title">登録日</div>
+                <div class="support-content"><%= support.created_at.strftime('%Y/%m/%d')  %></div>
+              </div>
+              <div class="support-item">
+                <div class = "title">欲しいもの</div>
+                <div class="support-content"><%= support.item %></div>
+              </div>
+              <div class="support-reason">
+                <div class = "title">欲しい理由</div>
+                <div class="support-content"><%= support.reason %></div>
+              </div>
+            </div>
+          <% end %> 
+        </li>
+      <% end %> 
+    </ul>
+  </div> 
+</div>
 
-<div class="supports">
-  <%= render partial: 'supports/support', collection: @supports %>
-</div> 
+
+<div class="">
+  </div>
+  <div class="">
+  </div>

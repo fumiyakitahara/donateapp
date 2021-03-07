@@ -3,7 +3,7 @@ class SupportsController < ApplicationController
 
 
   def index
-    @supports = Support.all
+    @supports = Support.all.order('created_at DESC')
   end
 
   def new
