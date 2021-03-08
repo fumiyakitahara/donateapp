@@ -1,14 +1,359 @@
-header{
-  height: 60px;
-  display: flex;
-  background-color: rgb(161, 183, 211);
+*{
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-.header-left{
-  float: left;  
-  width: 13%;
+.height{
+  margin-top: 60px;
+}
+ul,
+li {
+  list-style: none;
+}
+
+/* header*/
+.gnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .2);
+  box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .2);
+  display: flex;
+  z-index:500;
+  height: 60px;
+  justify-content:space-between;	
+  background-color: rgba(194, 192, 176, 0.699);
 }
 .header-right{
   float: right;
-  width: 87%;
+  margin-right: 50px;
+  padding-top: 20px;
+}
+
+.gnav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gnav-item {
+  font-family: "Open sans", sans-serif;
+  font-size: 16px;
+  padding: 0 24px;
+  letter-spacing: .05em;
+
+}
+
+.gnav-link {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #333;
+}
+
+.gnav-link:hover {
+  opacity: 1;
+}
+
+.gnav-link:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #333;
+}
+
+.gnav-link:hover:after {
+  width: 100%;
+}
+
+
+.site-name{
+  width: 20%;
+  text-align: center;
+}
+.name{
+  margin: 0 auto;
+  font-size: 40px;
+  color: black;
+  font-family: 'Caveat', cursive;
+}
+
+/* content*/
+
+.content{
+  margin-top: 60px;
+  text-align:center;
+  z-index: 0;
+}
+
+.pic{
+  width: 65%;
+}
+
+/* each person */
+.pictures{
+  width:  200px;       /* ※縦横を同値に */
+  height: 200px;       /* ※縦横を同値に */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  background-position: left top;  /* 横長画像の左上を基準に表示 */
+  display: inline-block;          /* 複数の画像を横に並べたい場合 */
+}
+
+.support{
+  border: 5px solid green;
+
+}
+
+.support-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list{
+  width: 26%;
+  margin: 10px 20px;
+}
+
+.title{
+  width: 50%;
+  padding: 0.5em 1em;
+  color: #FFF;
+  margin:10px 0px 20px  20px;
+  background: #6eb7ff;
+  border-bottom: solid 6px #3f87ce;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+
+.support-content{
+  width: 75%;
+  padding: 0.5em 1em;
+  color: black;
+  background-color: #f7f7f7;
+  margin:10px 0px 20px  35px;
+  border-bottom: solid 6px #3f87ce;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+
+.attention{
+  float: right;
+  font-size: larger;
+  margin-right: 30px;
+}
+
+/* show page */
+.support-up{
+  display: flex; 
+  justify-content: center; 
+
+}
+
+.show-right{
+  width: 50%;
+}
+
+.support-down{
+  margin-left: 12%;
+}
+
+.show-pic{
+  width: 30%;
+  height: 65vh;
+  background-color: green;
+  margin-top: 20px;
+}
+
+.show-picture,.show-default{
+  width: 100%;
+  height: 65vh;
+  background-color: green;
+}
+
+.donate{
+  margin: 0 auto;
+  padding: 15px 0;
+  background-color: yellowgreen;
+  border-radius: 9px;
+  width: 15%;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.donate-string{
+  color: white;
+  font-size: 20px;
+}
+
+/* support/new */
+.form{
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+.each-form{
+  border-top: 1px solid green;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom:1px solid green;
+  margin-bottom: 20px;
+}
+
+.weight-bold-text{
+  width: 100%;
+  max-width: 248px;
+  margin-left: 19%;
+  padding: 10px;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  background: #6eb7ff;
+  border-radius: 9px;
+}
+
+.supports-text{
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 40%;
+  background: #eaedf2;
+  font-size: 18px;
+}
+
+.form-submit{
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background-color: yellowgreen;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.indispensable{
+  border: 2px solid black;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: rgb(113, 212, 236);
+}
+
+.cdivck-upload p{
+  margin-left: 40px;
+}
+
+/* order/index */
+
+.form-title{
+  font-size: 30px;
+  border: 3px solid black;
+  padding: 20px 0;
+}
+.input-expiration-date-wrap{
+  display: flex;
+}
+
+.order-supports-text{
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 30%;
+  background: #eaedf2;
+  font-size: 18px;
+}
+
+.button{
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background-color: yellowgreen;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* register/new session*/
+.register-button{
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background-color: yellowgreen;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.session-button{
+  border-radius: 6px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  width: 280px;
+  display: block;
+  letter-spacing: 0.05em;
+  background-color: yellowgreen;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+.register{
+  border: 2px solid black;
+  padding: 15px 0;
+  font-size: 20px;
+}
+
+.supports-text-prefecture{
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 10%;
+  background: #eaedf2;
+  font-size: 18px;
 }

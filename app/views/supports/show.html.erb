@@ -1,40 +1,51 @@
-<div class="support-show">
-  <div class="support-box">
-    <h2 class="name">
-      <%= @support.user.last_name + @support.user.first_name %>
-    </h2>
-    <div class="support-img-content">
-      <% if @support.image.attached?%>
-      <%= image_tag @support.image ,class:"support-box-img" %>
+<div class="content">
+  <div class="support-up">
+    <div class="show-pic">
+      <% if @support.image.attached? %>
+        <%= image_tag @support.image, class:"show-picture" %>
+      <% else %>
+        <%= image_tag "46477.jpg", class:"show-default" %>
       <% end %>
     </div>
-    <div class="support-price-box">
-      <span class="support-price">
-        <%= @support.price%>
-      </span>
-    </div>
-
-    <% if user_signed_in?  %>
-      <% if  current_user.id == @support.user_id%>
-        <%#= link_to "商品の編集", edit_support_path(@support), method: :get, class: "support-red-btn" %>
-        <p class="or-text">or</p>
-        <%#= link_to "削除", support_path(@support), method: :delete, class:"support-destroy" %>
-      <% else  %>
-        <%#= link_to "購入画面に進む", support_orders_path(@support) ,class:"support-red-btn"%>
-      <% end %>
-    <% end %>
-
-
-
-    <div class="support-explain-box">
-      <span><%= @support.reason %></span>
-    </div>
-    <div class="support-status-box">
-      <span><%= @support.status %></span>
+    <div class ="show-right">
+      <div class="support-user">
+        <div class = "title">お名前</div>
+        <div class="support-content"><%= @support.user.last_name + @support.user.first_name %> さん</div>
+      </div>
+      <div class="support-date">
+        <div class = "title">登録日</div>
+        <div class="support-content"><%= @support.created_at.strftime('%Y/%m/%d')  %></div>
+      </div>
+      <div class="support-item">
+        <div class = "title">欲しいもの</div>
+        <div class="support-content"><%= @support.item %></div>
+      </div>
+      <div class="support-item">
+        <div class = "title">目標金額</div>
+        <div class="support-content"><%= @support.price %></div>
+      </div>
+      <div class="support-item">
+        <div class = "title">これまでの支援金額</div>
+        <div class="support-content"><%= @total %></div>
+      </div>
     </div>
   </div>
+
+  <div class="support-down">
+    <div class="support-reason">
+      <div class = "title">欲しい理由</div>
+      <div class="support-content"><%= @support.reason %></div>
+    </div>
+
+    <div class="support-status">
+      <div class = "title">今の現状</div>
+      <div class="support-content"><%= @support.status %></div>
+    </div>
+  </div>
+
+  <%= link_to support_orders_path(@support), class: "donate" do %>
+    <div class = "donate-string">寄付</div>
+  <% end %>
+  <div><br/><br/><br/><br/></div>
 </div>
   
-<div class = "donate">
-  <%= link_to "寄付する",  "/supports/1/orders" %>
-</div>
