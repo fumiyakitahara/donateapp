@@ -357,3 +357,14 @@ li {
   background: #eaedf2;
   font-size: 18px;
 }
+
+.help-form{
+  margin: 0 auto;
+}
+
+.login{
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 15px 0;
+
+}
