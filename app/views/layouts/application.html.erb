@@ -26,7 +26,7 @@
             <li class="gnav-item"> <%=link_to "慈善団体に寄付","#",class: "gnav-link"%></li>
             <li class="gnav-item"> <%=link_to "支援の申し込み", new_support_path,class: "gnav-link"%></li>
             <% if user_signed_in?%>
-              <li class="gnav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              <li class="gnav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "gnav-link"%></li>
             <% else %>
               <li class="gnav-item"><%=link_to "アカウントの作成",new_user_registration_path, class: "gnav-link"%></li>
               <li class="gnav-item"> <%=link_to "ログイン",new_user_session_path, class: "gnav-link"%></li>

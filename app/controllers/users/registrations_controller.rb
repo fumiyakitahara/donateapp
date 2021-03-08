@@ -16,10 +16,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
      end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    binding.pry
     @address = @user.build_address
     render :new_address
-    binding.pry
   end
 
   def create_address

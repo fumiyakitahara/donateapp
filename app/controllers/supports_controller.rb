@@ -21,6 +21,7 @@ class SupportsController < ApplicationController
 
   def show
     @support = Support.find(params[:id])
+    @total = @support.orders.sum(:price)
   end
 
 

@@ -1,25 +1,30 @@
-<%= form_with  model: @order,  url:  support_orders_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
-  <%= render 'supports/error_messages', model: @order %>
-  <div class='form-wrap'>
-    <%= f.label :price, "金額" %>
-    <%= f.text_field :price, class:"price", placeholder:"例)2000" %>
-  </div>
-  <div class='form-wrap'>
-    <%= f.label :number,  "カード番号" %>
-    <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
-  </div>
-  <div class='form-wrap'>
-    <%= f.label :cvc ,"ＣＶＣ" %>
-    <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
-  </div>
-  <div class='form-wrap'>
-    <p>有効期限</p>
-    <div class='input-expiration-date-wrap'>
-      <%= f.text_field :exp_month, class:"exp_month", placeholder:"例)3" %>
-      <p>月</p>
-      <%= f.text_field :exp_year, class:"exp_year", placeholder:"例)24" %>
-      <p>年</p>
+<div class = "content">
+  <%= form_with  model: @order,  url:  support_orders_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
+    <%= render 'supports/error_messages', model: @order %>
+    <h1 class = "form-title">カード情報入力フォーム</h1>
+    
+    <div class='each-form'>
+      <%= f.label :price, "金額" ,class: "weight-bold-text"%>
+      <%= f.text_field :price, class:"order-supports-text", placeholder:"例)2000" %>
     </div>
-  </div>
-  <%= f.submit "購入" ,class:"button" %>
-<% end %>
+    <div class='each-form'>
+      <%= f.label :number,  "カード番号" ,class: "weight-bold-text" %>
+      <%= f.text_field :number, class:"order-supports-text", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+    </div>
+    <div class='each-form'>
+      <%= f.label :cvc ,"ＣＶＣ",class: "weight-bold-text" %>
+      <%= f.text_field :cvc, class:"order-supports-text", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+    </div>
+    <div class='each-form'>
+      <p class = "weight-bold-text">有効期限</p>
+      <div class='input-expiration-date-wrap'>
+        <%= f.text_field :exp_month, class:"exp_month", placeholder:"例)3" , class:"order-supports-text"%>
+        <p>月/</p>
+        <%= f.text_field :exp_year, class:"exp_year", placeholder:"例)24" , class:"order-supports-text"%>
+        <p>年</p>
+      </div>
+    </div>
+    <%= f.submit "寄付を確定する" ,class:"button" %>
+  <% end %>
+</div>
+
