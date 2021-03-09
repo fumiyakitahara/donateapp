@@ -2,6 +2,9 @@
   <h2 class = login>ログイン</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class='login-flash-message'>
+      <%= flash[:notice]="ログイン、またはアカウントを作成して下さい" %>
+    </div>
     <div class="each-form">
       <div class='weight-bold-text'>
         <label class="form-text">メールアドレス</label>

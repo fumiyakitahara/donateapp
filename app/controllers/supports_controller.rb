@@ -29,5 +29,4 @@ class SupportsController < ApplicationController
     def support_params
       params.require(:support).permit(:item,:price,:reason,:status,:image).merge(user_id: current_user.id)
     end
-
 end
