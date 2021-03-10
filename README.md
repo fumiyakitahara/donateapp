@@ -37,19 +37,28 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 
 # 使用方法
 トップ画面です。
-<img width="722" alt="スクリーンショット 2021-03-10 21 15 22" src="https://user-images.githubusercontent.com/78077570/110627796-bdfe8500-81e5-11eb-953a-ca3858b1615e.png">
+
+<img width="721" alt="スクリーンショット 2021-03-10 21 55 51" src="https://user-images.githubusercontent.com/78077570/110632805-63682780-81eb-11eb-8d4d-122a9efa539c.png">
+
+<img width="721" alt="スクリーンショット 2021-03-10 21 56 59" src="https://user-images.githubusercontent.com/78077570/110632948-8b578b00-81eb-11eb-9b4b-e2ce1e56531d.png">
 
 ログインした状態でヘッダーにある「支援に申し込む」を押して情報を入力します。送信を押すと今入力した情報がトップページの一覧の中に更新されます。
-<img width="722" alt="スクリーンショット 2021-03-10 21 21 06" src="https://user-images.githubusercontent.com/78077570/110628606-9360fc00-81e6-11eb-97b8-e112adb144b4.png">
+
+<img width="721" alt="スクリーンショット 2021-03-10 22 22 12" src="https://user-images.githubusercontent.com/78077570/110635999-16865000-81ef-11eb-8602-30b9ec7d3af2.png">
+
 
 一覧にある一つの枠を押すと詳細ページに移動します。
 そのページには編集、戻る、寄付、コメントのボタンがある。実際にコメントすることもできます。
+
 <img width="722" alt="スクリーンショット 2021-03-10 21 36 52" src="https://user-images.githubusercontent.com/78077570/110630485-bf7d7c80-81e8-11eb-87f4-06cbb6ed52c1.png">
 
 寄付ボタンを押すと寄付ページに移動します。そこで自分が支援したい分だけ寄付できる。寄付した分は詳細ページのこれまでの支援金額に加算されます。
-<img width="722" alt="スクリーンショット 2021-03-10 21 42 13" src="https://user-images.githubusercontent.com/78077570/110631116-85f94100-81e9-11eb-8b27-cfc14ea247be.png">
+
+<img width="721" alt="スクリーンショット 2021-03-10 22 23 58" src="https://user-images.githubusercontent.com/78077570/110636187-50efed00-81ef-11eb-993a-be40dea30802.png">
+
 
 またアカウント作成ではウィザード形式を利用して住所まで登録しています。その時、アクティブハッシュを用いました。
+
 <img width="722" alt="スクリーンショット 2021-03-10 21 47 18" src="https://user-images.githubusercontent.com/78077570/110631736-31a29100-81ea-11eb-8ed9-92fad253f538.png">
 # テーブル設計
 
