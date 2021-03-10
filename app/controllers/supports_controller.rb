@@ -22,6 +22,8 @@ class SupportsController < ApplicationController
   def show
     @support = Support.find(params[:id])
     @total = @support.orders.sum(:price)
+    @comment = Comment.new       
+    @comments = @support.comments.order(created_at: :desc)
   end
 
 

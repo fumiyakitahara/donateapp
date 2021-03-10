@@ -36,9 +36,6 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 まずは
 
 
-
-<img width="1080" alt="スクリーンショット 2021-03-09 17 08 18" src="https://user-images.githubusercontent.com/78077570/110439319-a8f8f780-80fa-11eb-8ca2-302cdd5d7114.png">
-
 # テーブル設計
 
 ## ER図

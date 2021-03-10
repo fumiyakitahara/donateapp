@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_one :address
   has_many :supports
   has_many :orders
+  has_many :comments, dependent: :destroy
+
 
   with_options presence: true do
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, length: { minimum: 6 }
