@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root to: "supports#index"
 
-  resources :supports, only:[:index,:new,:create,:show,:edit,:update] do
+  resources :supports, only:[:index,:new,:create,:show,:edit,:update,:destroy] do
     resources :orders, only:[:index,:create]
     resources :comments, only:[:create, :destroy]
   end

@@ -1,7 +1,7 @@
 class Support < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
 
 

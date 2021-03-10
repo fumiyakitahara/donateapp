@@ -52,10 +52,13 @@
     </div>
     <%= f.submit '送信', class: 'form-submit' %>
   <% end %>
-  <%#= link_to "削除",support_path(@support), method: :delete, class:"support-destroy" %>
-  <%= link_to support_path(@support), class: "donate" do %>
+  
+  <%= link_to support_path(@support), class: "donate-back" do %>
     <div class = "donate-string">戻る</div>
   <% end %>
+
+  <%= link_to "削除",support_path(@support), method: :delete, class:"support-destroy" %>
+
 </div>
 
 
