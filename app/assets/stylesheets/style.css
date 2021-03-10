@@ -304,6 +304,18 @@ li {
   margin-left: 40px;
 }
 
+/*edit*/
+.edit-btn{
+  margin: 15px auto;
+  padding: 10px 0;
+  background-color: rgb(71, 245, 193);
+  border-radius: 9px;
+  width: 15%;
+  display: inline-block;
+  border: 2px solid black;
+  color: black;
+}
+
 /* order/index */
 
 .form-title{

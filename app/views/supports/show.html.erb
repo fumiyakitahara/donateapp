@@ -67,9 +67,21 @@
           <%= form.submit "コメントする" ,class: "comment-submit"%>
         </div>
       <% end %>
+
+      <%= link_to support_path(@support), class: "donate" do %>
+        <div class = "donate-string">戻る</div>
+      <% end %>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
+
+
+    <% if user_signed_in?  %>
+      <% if  current_user.id == @support.user_id%>
+        <%= link_to "編集", edit_support_path(@support), method: :get, class: "edit-btn" %>
+      <% end %>
+    <% end %>
+
   </div>
 
   <div><br/><br/><br/><br/></div>

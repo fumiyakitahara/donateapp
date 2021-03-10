@@ -1,0 +1,62 @@
+<div class = "content">
+  <%= form_with model: @support, class: 'form', local: true do |f| %>
+    <%= render 'error_messages', model: f.object %>
+  
+    <div class="support-form">
+      <div class="each-form">
+        <div class="weight-bold-text">
+          欲しいもの
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :item, class:"supports-text", id:"support-name", placeholder:"例(学習机、塾代三ヶ月、本)", maxlength:"40" %>
+      </div>
+
+      <div class="each-form">
+        <div class="weight-bold-text">
+          金額(¥)
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :price, class:"supports-text", id:"support-price", placeholder:"例）300" %>
+      </div>
+
+      <div class="each-form">
+        <div class="weight-bold-text">
+          なぜ欲しいか説明してください
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :reason, class:"supports-text", id:"support-info", placeholder:"例)私は、将来医者になりたいです。そのためにいっぱい勉強する必要があります。しかし、母子家庭のため欲しい本が買えないので困っています" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="each-form">
+        <div class="weight-bold-text">
+          あなたのことについて教えてください
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :status, class:"supports-text", id:"support-info", placeholder:"例)私は今、中学３年生でこれから受験です。
+        母子家庭で、あまり裕福ではありません。塾に通うお金もないのでせめていい参考書を使いたいです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+      <div class="each-form">
+        <div class="weight-bold-text">
+          画像
+          <span class="indispensable">任意</span>
+        </div>
+        <div class="cdivck-upload">
+          <p>
+            あなたの顔写真、もしくは、何か見せたい画像があれば載せて下さい
+          </p>
+          <%= f.file_field :image, id:"support-image" %>
+        </div>
+        <div id="image-list" class="image-list"></div>
+      </div>
+    </div>
+    <%= f.submit '送信', class: 'form-submit' %>
+  <% end %>
+  <%#= link_to "削除",support_path(@support), method: :delete, class:"support-destroy" %>
+  <%= link_to support_path(@support), class: "donate" do %>
+    <div class = "donate-string">戻る</div>
+  <% end %>
+</div>
+
+
+
