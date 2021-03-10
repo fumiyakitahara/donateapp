@@ -36,7 +36,7 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 ・circleCIを組み込む
 
 # 使用方法
-トップ画面です。
+トップ画面です。支援が必要な人はヘッダーの「支援の申し込み欄」から情報を入力して寄付を集めます。寄付する人は、詳細ページの「寄付」のボタンから寄付ができます。
 
 <img width="721" alt="スクリーンショット 2021-03-10 21 55 51" src="https://user-images.githubusercontent.com/78077570/110632805-63682780-81eb-11eb-8d4d-122a9efa539c.png">
 
@@ -48,7 +48,7 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 
 
 一覧にある一つの枠を押すと詳細ページに移動します。
-そのページには編集、戻る、寄付、コメントのボタンがある。実際にコメントすることもできます。
+そのページには編集、戻る、寄付、コメントのボタンがある。実際にコメントすることもできます。コメントは、資金的な援助はできなくても知識を共有することで支援になることもあると思い作りました。
 
 <img width="722" alt="スクリーンショット 2021-03-10 21 36 52" src="https://user-images.githubusercontent.com/78077570/110630485-bf7d7c80-81e8-11eb-87f4-06cbb6ed52c1.png">
 
