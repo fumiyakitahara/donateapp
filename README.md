@@ -22,9 +22,12 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 ・クレジット決済機能
 
 今後の実装予定
-・記事編集機能
-・記事削除機能
-・コメント機能
+・単体テスト
+・結合テスト
+・記事編集機能(3/10)
+・記事削除機能(3/10)
+・コメント機能(3/10)
+・コメント機能の非同期
 ・いいね機能
 ・検索機能
 ・プレビュー機能
@@ -33,14 +36,26 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 ・circleCIを組み込む
 
 # 使用方法
-まずは
+トップ画面です。
+<img width="722" alt="スクリーンショット 2021-03-10 21 15 22" src="https://user-images.githubusercontent.com/78077570/110627796-bdfe8500-81e5-11eb-953a-ca3858b1615e.png">
 
+ログインした状態でヘッダーにある「支援に申し込む」を押して情報を入力します。送信を押すと今入力した情報がトップページの一覧の中に更新されます。
+<img width="722" alt="スクリーンショット 2021-03-10 21 21 06" src="https://user-images.githubusercontent.com/78077570/110628606-9360fc00-81e6-11eb-97b8-e112adb144b4.png">
 
+一覧にある一つの枠を押すと詳細ページに移動します。
+そのページには編集、戻る、寄付、コメントのボタンがある。実際にコメントすることもできます。
+<img width="722" alt="スクリーンショット 2021-03-10 21 36 52" src="https://user-images.githubusercontent.com/78077570/110630485-bf7d7c80-81e8-11eb-87f4-06cbb6ed52c1.png">
+
+寄付ボタンを押すと寄付ページに移動します。そこで自分が支援したい分だけ寄付できる。寄付した分は詳細ページのこれまでの支援金額に加算されます。
+<img width="722" alt="スクリーンショット 2021-03-10 21 42 13" src="https://user-images.githubusercontent.com/78077570/110631116-85f94100-81e9-11eb-8b27-cfc14ea247be.png">
+
+またアカウント作成ではウィザード形式を利用して住所まで登録しています。その時、アクティブハッシュを用いました。
+<img width="722" alt="スクリーンショット 2021-03-10 21 47 18" src="https://user-images.githubusercontent.com/78077570/110631736-31a29100-81ea-11eb-8ed9-92fad253f538.png">
 # テーブル設計
 
 ## ER図
+<img width="906" alt="スクリーンショット 2021-03-10 21 50 34" src="https://user-images.githubusercontent.com/78077570/110632160-a675cb00-81ea-11eb-96da-7f89e4553746.png">
 
-<img width="1080" alt="スクリーンショット 2021-03-09 17 08 18" src="https://user-images.githubusercontent.com/78077570/110439319-a8f8f780-80fa-11eb-8ca2-302cdd5d7114.png">
 
 ## users テーブル
 
@@ -105,3 +120,15 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 - belongs_to :support
 - belongs_to :user
 
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| support | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :support
+- belongs_to :user

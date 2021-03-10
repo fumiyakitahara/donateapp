@@ -10,23 +10,23 @@
     <div class ="show-right">
       <div class="support-user">
         <div class = "title">お名前</div>
-        <div class="support-content"><%= @support.user.last_name + @support.user.first_name %> さん</div>
+        <div class="support-content-show"><%= @support.user.last_name + @support.user.first_name %> さん</div>
       </div>
       <div class="support-date">
         <div class = "title">登録日</div>
-        <div class="support-content"><%= @support.created_at.strftime('%Y/%m/%d')  %></div>
+        <div class="support-content-show"><%= @support.created_at.strftime('%Y/%m/%d')  %></div>
       </div>
       <div class="support-item">
         <div class = "title">欲しいもの</div>
-        <div class="support-content"><%= @support.item %></div>
+        <div class="support-content-show"><%= @support.item %></div>
       </div>
       <div class="support-item">
         <div class = "title">目標金額</div>
-        <div class="support-content"><%= @support.price %></div>
+        <div class="support-content-show"><%= @support.price %></div>
       </div>
       <div class="support-item">
         <div class = "title">これまでの支援金額</div>
-        <div class="support-content"><%= @total %></div>
+        <div class="support-content-show"><%= @total %></div>
       </div>
     </div>
   </div>
@@ -68,7 +68,7 @@
         </div>
       <% end %>
 
-      <%= link_to support_path(@support), class: "donate-back" do %>
+      <%= link_to root_path, class: "donate-back" do %>
         <div class = "donate-string">戻る</div>
       <% end %>
     <% else %>
