@@ -46,6 +46,32 @@
   <%= link_to support_orders_path(@support), class: "donate" do %>
     <div class = "donate-string">寄付</div>
   <% end %>
+
+  <div class="container">
+    <p class = "donate-attention">もし、<%= @support.user.last_name%>さんが役立つ情報があれば共有しましょう</p>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments.present? %>
+        <% @comments.each do |comment|  %>
+          <p class = "comment">
+            <strong><%= comment.user.last_name %>さん：</strong>
+            <%= comment.content %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@support, @comment], local: true ) do |form|  %>
+        <div class = "comment-push">
+          <%= form.text_area :content, placeholder: "コメントする", rows: "2",class: "comment-form"%>
+          <%= form.submit "コメントする" ,class: "comment-submit"%>
+        </div>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
+
   <div><br/><br/><br/><br/></div>
 </div>
   

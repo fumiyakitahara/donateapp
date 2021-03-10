@@ -190,11 +190,47 @@ li {
   width: 15%;
   display: inline-block;
   border: 2px solid black;
+  margin-bottom: 25px;
 }
 
 .donate-string{
   color: white;
   font-size: 20px;
+}
+
+.comments{
+  margin-top: 30px;
+  font-size: larger;
+  margin-bottom: 25px;
+}
+
+.comment{
+  margin: 0 auto;
+  width: 40%;
+  margin-bottom: 5px;
+  border: 2px solid black;
+
+}
+
+.comment-form{
+  margin: 0 auto;
+  width: 40%;
+}
+
+.comment-push{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.comment-submit{
+  margin: 15px auto;
+  padding: 10px 0;
+  background-color: rgb(218, 214, 214);
+  border-radius: 9px;
+  width: 15%;
+  display: inline-block;
+  border: 2px solid black;
 }
 
 /* support/new */
