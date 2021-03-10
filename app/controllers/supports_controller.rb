@@ -26,6 +26,19 @@ class SupportsController < ApplicationController
     @comments = @support.comments.order(created_at: :desc)
   end
 
+  def edit
+    @support = Support.find(params[:id])
+  end
+
+  def update
+    @support = Support.find(params[:id])
+    if @support.update(support_params)
+      redirect_to support_path(params[:id])
+    else
+      render :edit
+    end
+  end
+
 
   private
     def support_params
