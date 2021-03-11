@@ -1,6 +1,5 @@
 class SupportsController < ApplicationController
-  before_action :authenticate_user!, except: [:index,:show]
-
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @supports = Support.all.order('created_at DESC')
@@ -22,7 +21,7 @@ class SupportsController < ApplicationController
   def show
     @support = Support.find(params[:id])
     @total = @support.orders.sum(:price)
-    @comment = Comment.new       
+    @comment = Comment.new
     @comments = @support.comments.order(created_at: :desc)
   end
 
@@ -45,10 +44,9 @@ class SupportsController < ApplicationController
     redirect_to root_path
   end
 
-
-
   private
-    def support_params
-      params.require(:support).permit(:item,:price,:reason,:status,:image).merge(user_id: current_user.id)
-    end
+
+  def support_params
+    params.require(:support).permit(:item, :price, :reason, :status, :image).merge(user_id: current_user.id)
+  end
 end

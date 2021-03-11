@@ -157,12 +157,12 @@ li {
 /* show page */
 .support-up{
   display: flex; 
-  justify-content: center; 
+  
 
 }
 
 .show-right{
-  width: 50%;
+  width: 60%;
 }
 
 .support-content-show{
@@ -171,7 +171,7 @@ li {
   color: black;
   background-color: #f7f7f7;
   margin:10px 0px 20px 20%;
-  border-bottom: solid 6px #7cb9f7;
+  border-bottom: solid 6px hsl(210, 88%, 73%);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
 }
@@ -181,10 +181,11 @@ li {
 }
 
 .show-pic{
-  width: 30%;
+  width: 40%;
   height: 65vh;
   background-color: green;
   margin-top: 20px;
+  margin-left: 10%;
 }
 
 .show-picture,.show-default{
@@ -283,7 +284,7 @@ li {
   font-weight: bold;
   font-size: 18px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-  background: #6eb7ff;
+  background: #9ecfff;
   border-radius: 9px;
 }
 

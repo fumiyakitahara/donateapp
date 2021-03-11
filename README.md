@@ -20,6 +20,7 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 ・記事投稿機能
 ・画像ファイルのアップロード機能
 ・クレジット決済機能
+・rubcopを使用
 
 今後の実装予定
 ・単体テスト
