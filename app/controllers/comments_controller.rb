@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
       redirect_to support_path(params[:support_id])
     else
       @support = Support.find(params[:support_id])
-      render "supports/show"
+      render 'supports/show'
     end
   end
 
@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:content).merge(user_id: current_user.id, support_id: params[:support_id])
   end
