@@ -24,7 +24,9 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 
 今後の実装予定
 ・単体テスト(user/address/supportテーブル 3/12)
+(factorybot,faker,gimei,rspecを使用)
 ・結合テスト
+・エラーメッセージの日本語化(3/11)
 ・記事編集機能(3/10)
 ・記事削除機能(3/10)
 ・コメント機能(3/10)

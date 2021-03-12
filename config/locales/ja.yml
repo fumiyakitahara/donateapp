@@ -19,13 +19,7 @@ ja:
        price: 金額
        reason: 「なぜ欲しいのか説明してください」
        status: 「あなたのことについて教えてください」
-
- activemodel:
-   attributes:
-     order_address:
-       postal_code: 郵便番号
-       prefecture_id: 都道府県
-       city: 市区町村
-       house_number: 番地
-       phone_number: 電話番号
-       token: クレジットカード情報
+     order:
+       price: 金額
+       token: カード情報
+ 
