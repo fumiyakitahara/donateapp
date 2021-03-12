@@ -13,10 +13,14 @@ class User < ApplicationRecord
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, length: { minimum: 6 }
     validates :phone_number, format: { with: /\A\d{6,11}\z/ }
 
-    validates :last_name
-    validates :first_name
+    with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/ } do
+      validates :last_name
+      validates :first_name
+    end
 
-    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' } do
+   
+
+    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'は全角カタカナのみで入力して下さい' } do
       validates :last_name_kana
       validates :first_name_kana
     end

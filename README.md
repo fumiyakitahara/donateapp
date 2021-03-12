@@ -23,7 +23,7 @@ Ruby/Ruby on Rails/Haml/SCSS/Javascripit/VScode
 ・rubcopを使用
 
 今後の実装予定
-・単体テスト
+・単体テスト(user/address/supportテーブル 3/12)
 ・結合テスト
 ・記事編集機能(3/10)
 ・記事削除機能(3/10)

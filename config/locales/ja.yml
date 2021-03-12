@@ -1,0 +1,31 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       last_name: 名字(全角)
+       first_name: 名前(全角)
+       last_name_kana: 名字(カナ)
+       first_name_kana: 名前(カナ)
+       phone_number: 電話番号
+     address:
+       address: 住所
+       postal_code: 郵便番号
+       prefecture_id: 都道府県
+       city: 市区町村
+       house_number: 番地
+       building_number: 建物・部屋番号        
+     support:
+       item: 欲しいもの
+       price: 金額
+       reason: 「なぜ欲しいのか説明してください」
+       status: 「あなたのことについて教えてください」
+
+ activemodel:
+   attributes:
+     order_address:
+       postal_code: 郵便番号
+       prefecture_id: 都道府県
+       city: 市区町村
+       house_number: 番地
+       phone_number: 電話番号
+       token: クレジットカード情報
