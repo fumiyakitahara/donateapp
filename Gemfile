@@ -67,3 +67,4 @@ gem 'active_hash'
 gem "jquery-rails"
 gem 'gimei'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
