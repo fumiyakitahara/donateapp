@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: donate_app_production
-  username: donate_app
+  username: 
   password: <%= ENV['DONATE_APP_DATABASE_PASSWORD'] %>
