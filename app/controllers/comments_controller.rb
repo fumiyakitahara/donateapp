@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
-    if @comment.save
-      redirect_to support_path(params[:support_id])
+    comment = Comment.new(comment_params)
+    if comment.save
+      render json:{ comment: comment }
     else
       @support = Support.find(params[:support_id])
       render 'supports/show'
