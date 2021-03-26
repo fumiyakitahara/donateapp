@@ -221,7 +221,8 @@ li {
   width: 40%;
   margin-bottom: 5px;
   border: 2px solid black;
-
+  display: flex;
+  justify-content: center;
 }
 
 .comment-form{

@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="support-up">
+  <div class="support-up" >
     <div class="show-pic">
       <% if @support.image.attached? %>
         <%= image_tag @support.image, class:"show-picture" %>
@@ -46,25 +46,27 @@
   <%= link_to support_orders_path(@support), class: "donate" do %>
     <div class = "donate-string">寄付</div>
   <% end %>
-
+  <div class = "a" ></div>
   <div class="container">
     <p class = "donate-attention">もし、<%= @support.user.last_name%>さんが役立つ情報があれば共有しましょう</p>
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% if @comments.present? %>
+        <div id="list">
+        </div>
         <% @comments.each do |comment|  %>
-          <p class = "comment">
-            <strong><%= comment.user.last_name %>さん：</strong>
-            <%= comment.content %>
-          </p>
+          <div class = "comment" data-id =<%= comment.support.id %> id="comment">
+            <div id= ”comment-name” ><%= comment.user.last_name %>さん：</div>
+            <div ><%= comment.content %></div>
+          </div>
         <% end %>
       <% end %>
     </div>
     <% if user_signed_in? %>
-      <%= form_with(model: [@support, @comment], local: true ) do |form|  %>
+      <%= form_with model: [@support, @comment], local: true ,id: "form" do |form|  %>
         <div class = "comment-push">
-          <%= form.text_area :content, placeholder: "コメントする", rows: "2",class: "comment-form"%>
-          <%= form.submit "コメントする" ,class: "comment-submit"%>
+          <%= form.text_area :content, placeholder: "コメントする", rows: "2",class: "comment-form", id: "content"%>
+          <%= form.submit "コメントする" ,class: "comment-submit", id: "submit"%>
         </div>
       <% end %>
 
