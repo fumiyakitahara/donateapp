@@ -55,9 +55,9 @@
         <div id="list">
         </div>
         <% @comments.each do |comment|  %>
-          <div class = "comment" data-id =<%= comment.support.id %> >
-            <strong><%= comment.user.last_name %>さん：</strong>
-            <%= comment.content %>
+          <div class = "comment" data-id =<%= comment.support.id %> id="comment">
+            <div id= ”comment-name” ><%= comment.user.last_name %>さん：</div>
+            <div ><%= comment.content %></div>
           </div>
         <% end %>
       <% end %>
@@ -65,7 +65,7 @@
     <% if user_signed_in? %>
       <%= form_with model: [@support, @comment], local: true ,id: "form" do |form|  %>
         <div class = "comment-push">
-          <%= form.text_area :content, placeholder: "コメントする", rows: "2",class: "comment-form"%>
+          <%= form.text_area :content, placeholder: "コメントする", rows: "2",class: "comment-form", id: "content"%>
           <%= form.submit "コメントする" ,class: "comment-submit", id: "submit"%>
         </div>
       <% end %>

@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
+    user = comment.user
     if comment.save
-      render json:{ comment: comment }
+      render json:{ comment: comment,user: user }
     else
       @support = Support.find(params[:support_id])
       render 'supports/show'
